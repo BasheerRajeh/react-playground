@@ -1,9 +1,10 @@
+import Header from "./components/layout/Header";
 
 const FoodOrder = () => {
     return (
-        <>
-            FoodOrder
-        </>
+        <div className="w-full h-screen bg-slate-900">
+            <Header />
+        </div>
     );
 };
 
