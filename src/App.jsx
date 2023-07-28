@@ -1,7 +1,9 @@
+import FoodOrder from "./projects/simple-food-order/FoodOrder"
+
 function App() {
 
   return (
-    <>All Clean up 🤳, Let’s show the world what we can do with our brains and fingers! 🧠👆</>
+    <FoodOrder />
   )
 }
 
