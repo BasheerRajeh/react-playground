@@ -5,7 +5,7 @@ import mealsImage from "./../../assets/meals.jpg";
 const Header = () => {
     return (
         <>
-            <header className="bg-red-950 h-16 flex justify-between items-center px-24 z-10">
+            <header className="bg-red-950 h-16 flex justify-between items-center px-24 sticky top-0 z-10">
                 <h1 className="text-slate-100 font-bold text-2xl">React Meals</h1>
                 <CartButton />
             </header>
