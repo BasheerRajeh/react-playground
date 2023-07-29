@@ -1,27 +1,18 @@
 import PropTypes from "prop-types";
 import Card from "./Card";
 
-const Backdrop = () => {
+const Backdrop = (props) => {
     return (
-        <div className="h-screen w-screen fixed top-0 left-0 bg-slate-900 opacity-50 z-20"></div>
+        <div
+            className="h-screen w-screen fixed top-0 left-0 bg-slate-900 opacity-50 z-20"
+            onClick={() => props.onClose()}
+        ></div>
     );
 };
 
-/**
- * 
- *   position: fixed;
-  top: 20vh;
-  left: 5%;
-  width: 90%;
-  background-color: white;
-  padding: 1rem;
-  border-radius: 14px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  z-index: 30;
-  animation: slide-down 300ms ease-out forwards;
- * @param {*} props 
- * @returns 
- */
+Backdrop.propTypes = {
+    onClose: PropTypes.func.isRequired,
+};
 
 const ModalOverlay = (props) => {
     return (
@@ -38,7 +29,7 @@ ModalOverlay.propTypes = {
 const Modal = (props) => {
     return (
         <>
-            <Backdrop />
+            <Backdrop onClose={props.onClose} />
             <ModalOverlay>{props.children}</ModalOverlay>
         </>
     );
@@ -46,6 +37,7 @@ const Modal = (props) => {
 
 Modal.propTypes = {
     children: PropTypes.node,
+    onClose: PropTypes.func.isRequired,
 };
 
 export default Modal;

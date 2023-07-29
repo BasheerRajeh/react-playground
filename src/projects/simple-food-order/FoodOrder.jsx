@@ -1,13 +1,16 @@
+import { useState } from "react";
 import Cart from "./components/Cart/Cart";
 import Header from "./components/layout/Header";
 import Meals from "./components/meal/Meals";
 
 const FoodOrder = () => {
+    const [open, setOpen] = useState(false);
+
     return (
         <>
-            <Cart />
+            {open && <Cart onClose={() => setOpen(false)} />}
             <div className="w-full h-screen overflow-y-auto bg-slate-900 relative">
-                <Header />
+                <Header onOpen={() => setOpen(true)} />
                 <main>
                     <Meals />
                 </main>
