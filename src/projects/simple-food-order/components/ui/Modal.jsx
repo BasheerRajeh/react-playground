@@ -16,8 +16,8 @@ Backdrop.propTypes = {
 
 const ModalOverlay = (props) => {
     return (
-        <div className="fixed top-40 max-h-96 left-[10%] w-4/5 z-30">
-            <Card className="max-w-md m-auto w-3/4">{props.children}</Card>
+        <div className="fixed top-40 max-h-96 w-full z-30">
+            <Card className="max-w-md m-auto max-h-96 w-3/4  overflow-auto">{props.children}</Card>
         </div>
     );
 };
